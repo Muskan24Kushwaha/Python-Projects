@@ -1,0 +1,43 @@
+# Dice Rolling Program
+import random 
+
+# Function to roll the dice and get a random number between 1 and 6
+def roll_dice():
+    result = random.randint(1,6)
+    print("Rolling......🥴")
+    print("You got",result , "on the dice!😮")
+    print("\n")
+
+# Roll the dice 3 times at minimum
+def rolling(roll_count):
+
+    for i in range (3):
+        input("Press 😜Enter to roll a dice...")
+        roll_dice()
+        roll_count += 1     # will count the no. of times the dice has been rolled
+
+    print("😁You have rolled the dice",roll_count, "times.")
+    print("\n")
+    return roll_count
+
+# Main game loop
+def main():
+    print("\n")
+    print("Welcome to the 🎲Dice Rolling Program! ")
+    print("You will get 3️⃣ chances in one round to roll the dice.")
+    print("\n")
+
+    roll_count = 0
+
+    roll_count = rolling(roll_count)    # returns the updated roll_count after 3 rolls
+
+    while True:     # It's used to keep asking the user if they want to roll again
+        again = input("🥳Do you want to continue with another round of rolling the dice❓ (y/n) : ")
+        if again.lower() == "y":
+            roll_count = rolling(roll_count)
+        else:
+            print("Thank you for playing!✌🏻\nGoodbye!👋🏻")
+            print("\n")
+            return
+
+main()    # calling the main function to start the program
